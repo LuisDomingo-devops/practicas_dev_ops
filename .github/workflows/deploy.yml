@@ -18,9 +18,6 @@ jobs:
           username: ${{ secrets.AZURE_USERNAME }}
           key: ${{ secrets.AZURE_SSH_KEY }}
           script: |
-            cd ~/practicas_dev_ops
-            git pull origin main
-            docker build -t app-nube .
-            docker stop mi-app-azure || true
-            docker rm mi-app-azure || true
-            docker run -d --name mi-app-azure -e NOMBRE="Luis_CI_CD_Exitoso" app-nube
+            echo "¡Conexión establecida con éxito!"
+            hostname
+            docker --version
